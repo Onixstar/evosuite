@@ -188,6 +188,8 @@ public class PropertiesTestGAFactory
                 return new SinglePointCrossOver<>();
             case UNIFORM:
                 return new UniformCrossOver<>();
+            case MIDDLE:
+                return new MiddleCrossOver<>();
             default:
                 throw new RuntimeException("Unknown crossover function: "
                         + Properties.CROSSOVER_FUNCTION);
