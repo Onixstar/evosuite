@@ -265,6 +265,8 @@ public class PropertiesSuiteGAFactory
                 return new org.evosuite.ga.operators.crossover.CoverageCrossOver();
             case UNIFORM:
                 return new UniformCrossOver<>();
+            case MIDDLE:
+                return new MiddleCrossOver();
             default:
                 throw new RuntimeException("Unknown crossover function: "
                         + Properties.CROSSOVER_FUNCTION);
