@@ -267,6 +267,8 @@ public class PropertiesSuiteGAFactory
                 return new UniformCrossOver<>();
             case MIDDLE:
                 return new MiddleCrossOver<>();
+            case MULTDUP:
+                return new MultDupCrossOver<>();
             default:
                 throw new RuntimeException("Unknown crossover function: "
                         + Properties.CROSSOVER_FUNCTION);
