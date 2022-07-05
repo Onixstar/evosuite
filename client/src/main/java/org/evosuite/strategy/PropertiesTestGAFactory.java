@@ -99,6 +99,9 @@ public class PropertiesTestGAFactory
             case BREEDER_GA:
                 logger.info("Chosen search algorithm: BreederGA");
                 return new BreederGA<>(factory);
+            case FITNESS_GA:
+                logger.info("Chosen search algorithm: FitnessGA");
+                return new FitnessGA<>(factory);
             case MONOTONIC_GA:
                 logger.info("Chosen search algorithm: MonotonicGA");
             {
