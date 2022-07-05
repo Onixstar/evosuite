@@ -163,6 +163,9 @@ public class PropertiesSuiteGAFactory
             case BREEDER_GA:
                 logger.info("Chosen search algorithm: BreederGA");
                 return new BreederGA<>(factory);
+            case FITNESS_GA:
+                logger.info("Chosen search algorithm: FitnessGA");
+                return new FitnessGA<>(factory);
             case RANDOM_SEARCH:
                 logger.info("Chosen search algorithm: Random");
                 return new RandomSearch<>(factory);
