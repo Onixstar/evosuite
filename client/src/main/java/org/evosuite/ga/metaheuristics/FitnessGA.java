@@ -113,13 +113,7 @@ public class FitnessGA<T extends Chromosome<T>> extends StandardGA<T> {
                 continue;
             }
             
-            T offspring;
-            if(parent1.getFitness() < parent2.getFitness()) {
-                offspring = offspring1;
-            }
-            else {
-                offspring = offspring2;
-            }
+            T offspring = Randomness.choice(offspring1, offspring2);
 
             notifyMutation(offspring);
             offspring.mutate();
