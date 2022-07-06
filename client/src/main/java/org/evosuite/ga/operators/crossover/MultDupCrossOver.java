@@ -60,6 +60,7 @@ public class MultDupCrossOver<T extends Chromosome<T>> extends CrossOverFunction
         T t2 = parent2.clone();
 
         // Calculate threshold for iteration count based on fitness
+        // Higher differences result in more copies of the chromosome with higher fitness value
         double threshold = 0;
         if(fitness_1 > fitness_2){
             threshold = fitness_1 / fitness_2;
@@ -68,23 +69,35 @@ public class MultDupCrossOver<T extends Chromosome<T>> extends CrossOverFunction
             threshold = fitness_2 / fitness_1;
         }
 
-        // Set iteration length based on threshold
-        int max_len = (int) Math.ceil(threshold * Math.min(10,(parent1.size() + parent2.size())/2));
+        // Set iteration length based on threshold, which is cut off at a maximum iteration
+        // count of 10 * threshold, limiting threshold size too
+        int max_len = 0;
+        if(threshold > 10){
+            max_len = (int) Math.ceil(10 * Math.min(10,(parent1.size() + parent2.size())/2));
+        }
+        else{
+            max_len = (int) Math.ceil(threshold * Math.min(10,(parent1.size() + parent2.size())/2));
+        }
 
         // Choose parent with higher fitness
         if(fitness_1 > fitness_2){
-            // Threshold influences points also in each iteration
+            // Threshold influences points also in each iteration, so that more genes from
+            // a chromosome wit higher fitness are inherited
+            // An additional random factor makes sure we have different crossover points each iteration
             for(int i = 0; i < max_len; i++){
                 point1 = (int) (Randomness.nextInt(parent1.size()) + (int) Math.min(Math.floor(parent1.size()*threshold), parent1.size()) - 2)/2;
                 point2 = (int) (Randomness.nextInt(parent2.size()) - 1);
+                // Using Single-point-crossover function provided by chromosome class
                 parent1.crossOver(t2, point1, point2);
                 parent2.crossOver(t1, point2, point1);
             } 
         }
         else{
+            // Same as above, but for second parent
             for(int i = 0; i < max_len; i++){
                 point1 = (int) (Randomness.nextInt(parent1.size()) -1);
                 point2 = (int) (Randomness.nextInt(parent2.size()) + (int) Math.min(Math.floor(parent2.size()*threshold), parent2.size()) - 2)/2;
+                // Using Single-point-crossover function provided by chromosome class
                 parent1.crossOver(t2, point1, point2);
                 parent2.crossOver(t1, point2, point1);
             } 

@@ -313,7 +313,7 @@ public class Properties {
         // random
         RANDOM_SEARCH,
         // GAs
-        STANDARD_GA, MONOTONIC_GA, STEADY_STATE_GA, BREEDER_GA, CELLULAR_GA, STANDARD_CHEMICAL_REACTION, MAP_ELITES,
+        STANDARD_GA, MONOTONIC_GA, STEADY_STATE_GA, BREEDER_GA, FITNESS_GA, CELLULAR_GA, STANDARD_CHEMICAL_REACTION, MAP_ELITES,
         // mu-lambda
         ONE_PLUS_LAMBDA_LAMBDA_GA, ONE_PLUS_ONE_EA, MU_PLUS_LAMBDA_EA, MU_LAMBDA_EA,
         // many-objective algorithms
@@ -623,6 +623,9 @@ public class Properties {
     @Parameter(key = "elite", group = "Search Algorithm", description = "Elite size for search algorithm")
     public static int ELITE = 1;
 
+    @Parameter(key = "median", group = "Search Algorithm", description = "Use of Median or Average in FitnessGA")
+    public static boolean MEDIAN = true;
+
     @Parameter(key = "mu", group = "Search Algorithm", description = "Number of individuals selected by Mu + Lambda EA for the next generation")
     public static int MU = 1;
 
@@ -693,7 +696,7 @@ public class Properties {
     public static StoppingCondition STOPPING_CONDITION = StoppingCondition.MAXTIME;
 
     public enum CrossoverFunction {
-        SINGLEPOINTRELATIVE, SINGLEPOINTFIXED, SINGLEPOINT, COVERAGE, UNIFORM, MIDDLE, MULTDUP
+        SINGLEPOINTRELATIVE, SINGLEPOINTFIXED, SINGLEPOINT, COVERAGE, UNIFORM, MIDDLE, MULTDUP, FITNESS
     }
 
     @Parameter(key = "crossover_function", group = "Search Algorithm", description = "Crossover function during search")
