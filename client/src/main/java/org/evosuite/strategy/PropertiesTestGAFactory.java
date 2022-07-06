@@ -192,11 +192,11 @@ public class PropertiesTestGAFactory
             case UNIFORM:
                 return new UniformCrossOver<>();
             case MIDDLE:
-                return new MiddleCrossOver<>();
+                return new MiddleCrossOver();
             case MULTDUP:
                 return new MultDupCrossOver<>();
             case FITNESS:
-                return new FitnessCrossOver<>();
+                return new FitnessCrossOver();
             default:
                 throw new RuntimeException("Unknown crossover function: "
                         + Properties.CROSSOVER_FUNCTION);
