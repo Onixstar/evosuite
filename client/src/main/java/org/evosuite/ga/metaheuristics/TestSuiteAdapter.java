@@ -405,6 +405,12 @@ public abstract class TestSuiteAdapter<A extends GeneticAlgorithm<TestChromosome
                 algorithm.setCrossOverFunction(new SinglePointFixedCrossOver<>());
             } else if (crossover instanceof SinglePointCrossOver) {
                 algorithm.setCrossOverFunction(new SinglePointCrossOver<>());
+            } else if (crossover instanceof MultDupCrossOver) {
+                algorithm.setCrossOverFunction(new MultDupCrossOver<>());
+            } else if (crossover instanceof FitnessCrossOver) {
+                algorithm.setCrossOverFunction(new FitnessCrossOver());
+            } else if (crossover instanceof MiddleCrossOver) {
+                algorithm.setCrossOverFunction(new MiddleCrossOver());
             } else {
                 throw new IllegalArgumentException("cannot adapt crossover " + crossover);
             }
