@@ -409,6 +409,8 @@ public abstract class TestSuiteAdapter<A extends GeneticAlgorithm<TestChromosome
                 algorithm.setCrossOverFunction(new MultDupCrossOver<>());
             } else if (crossover instanceof FitnessCrossOver) {
                 algorithm.setCrossOverFunction(new FitnessCrossOver());
+            } else if (crossover instanceof Fitness2CrossOver) {
+                algorithm.setCrossOverFunction(new Fitness2CrossOver());
             } else if (crossover instanceof MiddleCrossOver) {
                 algorithm.setCrossOverFunction(new MiddleCrossOver());
             } else {
