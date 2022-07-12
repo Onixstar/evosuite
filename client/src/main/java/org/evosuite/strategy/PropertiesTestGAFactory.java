@@ -197,6 +197,8 @@ public class PropertiesTestGAFactory
                 return new MultDupCrossOver<>();
             case FITNESS:
                 return new FitnessCrossOver();
+            case FITNESS2:
+                return new Fitness2CrossOver();
             default:
                 throw new RuntimeException("Unknown crossover function: "
                         + Properties.CROSSOVER_FUNCTION);
