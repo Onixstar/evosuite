@@ -29,7 +29,7 @@ import java.util.Random;
  *
  * @author Gordon Fraser
  */
-public class MultDupCrossOver<T extends Chromosome<T>> extends CrossOverFunction<T> {
+public class FitnessGeneCrossOver<T extends Chromosome<T>> extends CrossOverFunction<T> {
 
     private static final long serialVersionUID = 2881387570766261795L;
 
