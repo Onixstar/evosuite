@@ -99,7 +99,7 @@ public class FitnessGA<T extends Chromosome<T>> extends StandardGA<T> {
                 continue;
             }
 
-            if (parent1.getFitness() + parent2.getFitness() < median * 2.0) {
+            if (parent1.getFitness() + parent2.getFitness() >= median * 2.0) {
                 continue;
             }
 
