@@ -413,6 +413,8 @@ public abstract class TestSuiteAdapter<A extends GeneticAlgorithm<TestChromosome
                 algorithm.setCrossOverFunction(new Fitness2CrossOver());
             } else if (crossover instanceof MiddleCrossOver) {
                 algorithm.setCrossOverFunction(new MiddleCrossOver());
+            } else if (crossover instanceof FitnessGeneCrossOver) {
+                algorithm.setCrossOverFunction(new FitnessGeneCrossOver<>());
             } else {
                 throw new IllegalArgumentException("cannot adapt crossover " + crossover);
             }
