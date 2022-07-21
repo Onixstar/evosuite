@@ -25,11 +25,11 @@ public class Fitness2CrossOver extends CrossOverFunction {
             ratio = Math.max(0.2, fitness1 / fitness2);
 
             // Determine Crossover Points based on fitness values of the chromosones
-            int point1_1 = (int) Math.round(parent1.size() * ratio / 2.0);
-            int point2_1 = (int) Math.round(parent2.size() * ratio / 2.0);
+            int point1_1 = (int) Math.round(parent1.size() * (1.0 - (ratio / 2.0)));
+            int point2_1 = (int) Math.round(parent2.size() * (1.0 - (ratio / 2.0)));
 
-            int point1_2 = (int) Math.round(parent2.size() * (1.0 - (ratio / 2.0)));
-            int point2_2 = (int) Math.round(parent1.size() * (1.0 - (ratio / 2.0)));
+            int point1_2 = (int) Math.round(parent2.size() * (ratio / 2.0));
+            int point2_2 = (int) Math.round(parent1.size() * (ratio / 2.0));
 
             parent1.crossOver(t2, point1_1, point2_1);
             parent2.crossOver(t1, point1_2, point2_2);
@@ -38,11 +38,11 @@ public class Fitness2CrossOver extends CrossOverFunction {
             ratio = Math.max(0.2, fitness2 / fitness1);
 
             // Determine Crossover Points based on fitness values of the chromosones
-            int point1_1 = (int) Math.round(parent2.size() * ratio / 2.0);
-            int point2_1 = (int) Math.round(parent1.size() * ratio / 2.0);
+            int point1_1 = (int) Math.round(parent2.size() * (1.0 - (ratio / 2.0)));
+            int point2_1 = (int) Math.round(parent1.size() * (1.0 - (ratio / 2.0)));
 
-            int point1_2 = (int) Math.round(parent1.size() * (1.0 - (ratio / 2.0)));
-            int point2_2 = (int) Math.round(parent2.size() * (1.0 - (ratio / 2.0)));
+            int point1_2 = (int) Math.round(parent1.size() * (ratio / 2.0));
+            int point2_2 = (int) Math.round(parent2.size() * (ratio / 2.0));
 
             parent2.crossOver(t1, point1_1, point2_1);
             parent1.crossOver(t2, point1_2, point2_2);
