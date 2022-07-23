@@ -74,7 +74,7 @@ public class FitnessGA<T extends Chromosome<T>> extends StandardGA<T> {
         
         Double median = 0.0;
         if(Properties.MEDIAN == true) { // MEDIAN
-            for(int i = 0; i < FitnessValues.size() / 2; i++) {
+            for(int i = 0; i <= FitnessValues.size() / 2; i++) {
                 median = FitnessValues.get(i);
             }
         }
