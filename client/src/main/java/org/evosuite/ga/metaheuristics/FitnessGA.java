@@ -99,9 +99,9 @@ public class FitnessGA<T extends Chromosome<T>> extends StandardGA<T> {
                 continue;
             }
 
-            if (parent1.getFitness() + parent2.getFitness() >= median * 2.0) {
-                continue;
-            }
+            //if (parent1.getFitness() + parent2.getFitness() >= median * 2.0) {
+            //    continue;
+            //}
 
             T offspring1 = parent1.clone();
             T offspring2 = parent2.clone();
