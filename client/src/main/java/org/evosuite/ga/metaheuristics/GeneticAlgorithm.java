@@ -621,12 +621,6 @@ public abstract class GeneticAlgorithm<T extends Chromosome<T>> implements Searc
                 .collect(toList());
 
         logger.trace("Done.");
-            
-        for(int i = 0; i < elite.size(); i++)
-        {
-                output = "Fitness-Value of element " + i + ": "  + elite.get(i).getFitness();
-                System.out.println(output);
-        }
         return elite;
     }
 
