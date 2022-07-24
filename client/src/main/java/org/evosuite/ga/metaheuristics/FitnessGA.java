@@ -122,7 +122,7 @@ public class FitnessGA<T extends Chromosome<T>> extends StandardGA<T> {
                 offspring.updateAge(currentIteration);
             }
             if (!isTooLong(offspring)) {
-                newGeneration.add(offspring1);
+                newGeneration.add(offspring);
             }
         }
 
