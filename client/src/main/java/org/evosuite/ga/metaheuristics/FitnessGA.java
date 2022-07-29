@@ -72,15 +72,12 @@ public class FitnessGA<T extends Chromosome<T>> extends StandardGA<T> {
         
         Collections.sort(FitnessValues);
         
-        Double median = 0.0;
+        double median = 0.0;
         if(Properties.MEDIAN == true) { // MEDIAN
             median = FitnessValues.get(FitnessValues.size() / 2);
-            //for(int i = 0; i <= FitnessValues.size() / 2; i++) {
-            //    median = FitnessValues.get(i);
-            //}
         }
         else {  // MEAN
-            Double fitnessSum = 0.0;
+            double fitnessSum = 0.0;
             for(int i = 0; i < FitnessValues.size(); i++) {
                 fitnessSum += FitnessValues.get(i);
             }
@@ -100,9 +97,9 @@ public class FitnessGA<T extends Chromosome<T>> extends StandardGA<T> {
                 continue;
             }
 
-            //if ((parent1.getFitness() + parent2.getFitness()) > (median * 2.0)) {
-            //    continue;
-            //}
+            if ((parent1.getFitness() + parent2.getFitness()) > (median * 2.0)) {
+                continue;
+            }
 
             T offspring1 = parent1.clone();
             T offspring2 = parent2.clone();
