@@ -7,7 +7,7 @@ Prerequisites:
 Setup:
 	1. Download EvoSuite using: git clone https://github.com/Onixstar/evosuite.git
 	2. Go into the evosuite folder
-	3. Package EvoSuite mvn package
+	3. Package EvoSuite: mvn package
 	4. Get SF100 Benchmark: wget http://www.evosuite.org/files/SF100-EvoSuite-20120316.tar.gz
 	5. Unzip SF100 with: tar -Xcf SF100-EvoSuite-20120316.tar.gz
 	6. Go into evosuite/master/target
