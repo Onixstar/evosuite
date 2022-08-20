@@ -20,11 +20,11 @@ Executing Tests:
 		2.1 Take a look at the statement inside the loop that calls EvoSuite
 	3. Now set the "-target" option to "-target <name>.jar"
 	4. You can proceed using different configurations by configuring the parameters as follows:
-		4.1 Breeder Algorithm
-			- Standard Breeder: "-Dalgorithm=STANDARD_GA"
-			- Fitness Breeder: "-Dalgorithm=FITNESS_GA"
+		4.1 Search Algorithm
+			- Standard Search algorithm: "-Dalgorithm=STANDARD_GA"
+			- Fitness Search algorithm: "-Dalgorithm=FITNESS_GA"
 		4.2 Crossover Algorithm
-			- Single Point Relative Crossover: "-Dcrossover_function=SPR"
+			- Single Point Relative Crossover (Default): "-Dcrossover_function=SPR"
 			- Fitness Crossover: "-Dcrossover_function=FIT"
 			- Gene Crossover: "-Dcrossover_function=GENE"
 	5. Save and exit the script now.
@@ -32,4 +32,5 @@ Executing Tests:
 
 Aquire Results:
 	- Results of the executed test will be generated inside <target_project>/evosuite-reports/statistics.csv
-	- Note that if the "statistics.csv" file already exists, new results will always be appeneded to the end of the file
+	- Note that if the "statistics.csv" file already exists, new results will always be appeneded to the end of the file.
+	  Make sure to remove the file prior to starting a new set of tests.
