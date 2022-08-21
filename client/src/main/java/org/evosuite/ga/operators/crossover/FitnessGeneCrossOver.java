@@ -112,6 +112,8 @@ public class FitnessGeneCrossOver<T extends Chromosome<T>> extends CrossOverFunc
                 }
             }
         }
+        
+        // End of children is guaranteed to be the fitter parent
         if(fittest_parent == 1){
             parent1.crossOver(t1, max_genes-1);
             parent2.crossOver(t1, max_genes-1);
