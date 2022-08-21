@@ -19,7 +19,7 @@ Executing Tests:
 	2. Open up loop.sh
 		2.1 Take a look at the statement inside the loop that calls EvoSuite
 	3. Now set the "-target" option to "-target <name>.jar"
-	4. You can proceed using different configurations by configuring the parameters as follows:
+	4. You can proceed using different configurations by configuring the parameters in the loop.sh as follows:
 		4.1 Search Algorithm
 			- Standard Search algorithm: "-Dalgorithm=STANDARD_GA"
 			- Fitness Search algorithm: "-Dalgorithm=FITNESS_GA"
