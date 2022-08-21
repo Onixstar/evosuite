@@ -70,8 +70,10 @@ public class FitnessGA<T extends Chromosome<T>> extends StandardGA<T> {
             FitnessValues.add(candidates.get(i).getFitness());
         }
         
+        // Sort Fitness Values
         Collections.sort(FitnessValues);
         
+        // Determine Median or Mean
         double median = 0.0;
         if(Properties.MEDIAN == true) { // MEDIAN
             median = FitnessValues.get(FitnessValues.size() / 2);
@@ -96,7 +98,8 @@ public class FitnessGA<T extends Chromosome<T>> extends StandardGA<T> {
             if (parent1 == parent2) {
                 continue;
             }
-
+            
+            // Combined Fitness value must be lower or equal to median / mean of all chromosomes
             if ((parent1.getFitness() + parent2.getFitness()) > (median * 2.0)) {
                 continue;
             }
